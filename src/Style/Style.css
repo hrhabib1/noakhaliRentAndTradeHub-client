@@ -1,0 +1,18 @@
+.caro{
+    padding: 20px;
+    height: 800px;
+    width: full;
+    background-color: rgb(235, 243, 240);
+}
+.caro img{
+    height: 400px;
+   margin-inline: auto;
+   padding: 50px;
+}
+.catagory div{
+height: 200px;
+}
+.post img{
+    height: 600px;
+    width: 90%;
+}
