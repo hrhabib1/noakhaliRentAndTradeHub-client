@@ -1,4 +1,13 @@
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProviders";
+
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext)
+  const handleSignOut = () => {
+    logOut()
+      .then(() => { })
+      .catch(e => console.error(e))
+  }
     return (
         <div className="navbar fixed z-10 max-w-screen-xl mx-auto bg-opacity-30 bg-pink-400 p-5 rounded-xl text-black">
         <div className="navbar-start">
@@ -40,7 +49,17 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn" href="/register">LogIn/Register</a>
+        {
+                  user?.uid ?
+                    <>
+                      <button onClick={handleSignOut} className="btn btn-active btn-ghost">Sign out</button>
+                    </>
+                    :
+                    <>
+                     <a className="btn" href="/register">LogIn/Register</a>
+                    </>
+                }
+          
         </div>
       </div>
     );
