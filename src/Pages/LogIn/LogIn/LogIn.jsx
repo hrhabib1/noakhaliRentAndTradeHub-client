@@ -67,6 +67,7 @@ const LogIn = () => {
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
+                                <p className='text-danger m-3'>{error}</p>
                                 <button onClick={handleGoogleSignin} className="btn btn-warning mt-5"> Sign in with Goagle</button>
                                 <h1 className="text-center mt-5">Or,</h1>
                                 <p className="text-center"> Do not have an account? </p>

@@ -2,10 +2,10 @@ import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProviders";
 
 const Navbar = () => {
-  const { user, logOut } = useContext(AuthContext)
+  const { user, logOut } = useContext(AuthContext);
   const handleSignOut = () => {
-    logOut()
-      .then(() => { })
+      logOut()
+      .then(() => {console.log('Sign-out successful....')})
       .catch(e => console.error(e))
   }
     return (
@@ -36,28 +36,43 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1 text-xl">
             <li><a href="/">Home</a></li>
             <li><a href="/rentHouse">Rent House</a></li>
-            <li><a href="/buySell">Buy/Sell Exesories</a></li>
+            <li>
+              <details>
+                <summary>Buy/Sell Exesories</summary>
+                <ul className="p-2 bg-white w-56">
+                  <li><a href="/furnitures">Furnitures</a></li>
+                  <li><a href="/electronicDevices">Electronic Devices</a></li>
+                  <li><a href="/vehicles">Vehicles</a></li>
+                </ul>
+              </details>
+            </li>
             <li>
               <details>
                 <summary>Create Post</summary>
                 <ul className="p-2 bg-white w-56">
-                  <li><a>For Rent House</a></li>
-                  <li><a>For Sell Exesories</a></li>
+                  <li><a href="/AddRentHouse">For Rent House</a></li>
+                  <li><a href="/AddBuySell">For Sell Exesories</a></li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary>Create Advertising</summary>
+                <ul className="p-2 bg-white w-96">
+                  <li><a href="/AddvertisingRentHouse">Addvertising For Rent House</a></li>
+                  <li><a href="/AddvertisingBuySell">Addvertising For Sell Exesories</a></li>
                 </ul>
               </details>
             </li>
           </ul>
         </div>
         <div className="navbar-end">
-        {
-                  user?.uid ?
-                    <>
-                      <button onClick={handleSignOut} className="btn btn-active btn-ghost">Sign out</button>
-                    </>
-                    :
-                    <>
-                     <a className="btn" href="/register">LogIn/Register</a>
-                    </>
+       
+              {  
+              user?.email ?
+               <button onClick={handleSignOut} className="btn btn-active btn-ghost">Sign out</button>
+             :
+               <a className="btn" href="/register">LogIn/Register</a>
                 }
           
         </div>

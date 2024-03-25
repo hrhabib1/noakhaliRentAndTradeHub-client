@@ -1,6 +1,6 @@
 import Carousal from "./Carousal";
 import img1 from '../../../assets/home/house.jpg';
-import img2 from '../../../assets/home/flat.jpg';
+import img2 from '../../../assets/home/addvertising.jpeg';
 import img3 from '../../../assets/home/table.jpg';
 import img4 from '../../../assets/home/Room1.jpg';
 import img5 from '../../../assets/home/Table 2.jpg';
@@ -18,24 +18,24 @@ const Home = () => {
                 <div className="card w-96 bg-base-500 shadow-xl image-full">
                     <figure><img src={img1} alt="Shoes" /></figure>
                     <div className="card-body">
-                        <h2 className="card-title font-extrabold mt-16 mx-auto text-white">Rent House</h2>
-                        <button>See more</button>
-                    </div>
-                </div>
-                <div className="card w-96 bg-base-100 shadow-xl image-full">
-                    <figure><img src={img2} alt="Shoes" /></figure>
-                    <div className="card-body">
-                        <h2 className="card-title font-extrabold mt-16 mx-auto text-white">Rent Flat or Room</h2>
-                        <button>See more</button>
+                        <a href="/rentHouse" className="btn mt-10">Rent House</a>
                     </div>
                 </div>
                 <div className="card w-96 bg-base-100 shadow-xl image-full">
                     <figure><img src={img3} alt="Shoes" /></figure>
                     <div className="card-body">
-                        <h2 className="card-title font-extrabold mt-16 mx-auto text-white">Buy or Sell old Exesories</h2>
-                        <button>See more</button>
+                    <a href="/furnitures" className="btn -mt-3">Furnitures</a>
+                    <a href="/electronicDevices" className="btn">Electronic Devices</a>
+                    <a href="/vehicles" className="btn">Vehicles</a>
                     </div>
                 </div>
+                <div className="card w-96 bg-base-100 shadow-xl image-full">
+                    <figure><img src={img2} alt="Shoes" /></figure>
+                    <div className="card-body">
+                        <a href="/Addvertising" className="btn mt-10">Advertising</a>
+                    </div>
+                </div>
+                
             </div>
             <h1 className="text-xl font-bold text-black my-5">Recent Post:</h1>
             <div className="grid grid-cols-2 gap-10 mb-10 post text-black">
@@ -68,7 +68,7 @@ const Home = () => {
                 <div className="card card-compact bg-base-500 shadow-xl">
                     <figure><img src={img6} alt="Shoes" /></figure>
                     <div className="card-body">
-                    <h2 className="card-title">একটি পুরাতন চেয়ার বিক্রি করা হবে</h2>
+                        <h2 className="card-title">একটি পুরাতন চেয়ার বিক্রি করা হবে</h2>
                         <p>মাত্র তিনমাস ব্যবহার করা একটি পুরাতন চেয়ার বিক্রি করা হবে। </p>
                         <p>লোকেশনঃ হাউজিং বালুর মাঠ থেকে পশ্চিমে, হাজেরা মঞ্জিলের তৃতীয় তালা।</p>
                         <p>মূল্যঃ ৪০০টাকা  </p>
@@ -81,7 +81,7 @@ const Home = () => {
                 <div className="card card-compact bg-base-500 shadow-xl">
                     <figure><img src={img7} alt="Shoes" /></figure>
                     <div className="card-body">
-                    <h2 className="card-title">একটি পুরাতন টেবিল ও চেয়ার বিক্রি করা হবে</h2>
+                        <h2 className="card-title">একটি পুরাতন টেবিল ও চেয়ার বিক্রি করা হবে</h2>
                         <p>মাত্র ছয় মাস ব্যবহার করা একটি পুরাতন টেবিল ও চেয়ার বিক্রি করা হবে। </p>
                         <p>লোকেশনঃ হাউজিং বালুর মাঠ থেকে পশ্চিমে, হাজেরা মঞ্জিলের তৃতীয় তালা।</p>
                         <p>মূল্যঃ ১৪০০টাকা  </p>
@@ -94,7 +94,7 @@ const Home = () => {
                 <div className="card card-compact bg-base-500 shadow-xl">
                     <figure><img src={img8} alt="Shoes" /></figure>
                     <div className="card-body">
-                    <h2 className="card-title">একটি পুরাতন ওয়ার্ড ড্রপ বিক্রি করা হবে</h2>
+                        <h2 className="card-title">একটি পুরাতন ওয়ার্ড ড্রপ বিক্রি করা হবে</h2>
                         <p>মাত্র একবছর ব্যবহার করা একটি পুরাতন ওয়ার্ড ড্রপ বিক্রি করা হবে।</p>
                         <p>লোকেশনঃ হাউজিং বালুর মাঠ থেকে পশ্চিমে, হাজেরা মঞ্জিলের তৃতীয় তালা।</p>
                         <p>মূল্যঃ ১৮০০টাকা  </p>
@@ -107,7 +107,7 @@ const Home = () => {
                 <div className="card card-compact bg-base-500 shadow-xl">
                     <figure><img src={img9} alt="Shoes" /></figure>
                     <div className="card-body">
-                    <h2 className="card-title">একটি পুরাতন তাক বিক্রি করা হবে</h2>
+                        <h2 className="card-title">একটি পুরাতন তাক বিক্রি করা হবে</h2>
                         <p>মাত্র তিনমাস ব্যবহার করা একটি পুরাতন তাক বিক্রি করা হবে।</p>
                         <p>লোকেশনঃ হাউজিং বালুর মাঠ থেকে পশ্চিমে, হাজেরা মঞ্জিলের তৃতীয় তালা।</p>
                         <p>মূল্যঃ ৫০০টাকা  </p>

@@ -27,10 +27,12 @@ const AuthProviders = ({ children }) => {
         });
         return unsubscribe();
     },[])
-    const logOut = () => {
-        setLoading(true)
-        return signOut(auth);
+    const logOut = () =>{
+        setLoading(true);
+        return signOut(auth)
     }
+    
+      
     const authInfu = {
         user,
         loading,
