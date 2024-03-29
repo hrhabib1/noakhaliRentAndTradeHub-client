@@ -59,7 +59,7 @@ const AdvertisingBuySell = () => {
     }
     return (
         <div className="pt-32">
-            <h1 className=' font-extrabold text-black text-center'>Advertising For BuySell Post</h1>
+            <h1 className=' font-extrabold text-black text-center'>Create Advertising For BuySell Post</h1>
             <div className='border p-5 rounded mx-10 bg-blue-300'>
                 <div className='px-10 add flex flex-row gap-10 align-middle justify-center text-center '>
                     <div>
@@ -72,6 +72,7 @@ const AdvertisingBuySell = () => {
                         <img src={img2} alt="nagad" />
                     </div>
                 </div>
+                <h1 className='text-center font-extrabold text-xxl'><span className='text-black'>Send Money:(Bkash/Nagad)</span>  <strong className='text-red-600 text-2xl'>01581105270</strong></h1>
                 <p className='text-xxl text-black px-16 py-5'>আপনি আপনার পুরাতন পণ্য বিক্রির পোস্টটি বিজ্ঞাপন দিতে চাইলে আপনাকে প্রথমে বিকাশ অথবা নগদে ২৫টাকা পেমেন্ট করতে হবে। পেমেন্ট করার পর আপনি আপনার বিকাশ অথবা নগদ একাউন্ট নাম্বার, রেফারেন্স নাম্বার এবং ট্রান্সজেকশন নাম্বারটি ফরমের সাথে জমা দিবেন। আপনার তথ্য সঠিক হলে আপনার পোস্টটি এপ্রুপ করা হবে।  </p>
             </div>
             <h1 className="text-2xl mb-5 text-center   text-yellow-500 font-extrabold">A sample post. You can create your post follow its. </h1>

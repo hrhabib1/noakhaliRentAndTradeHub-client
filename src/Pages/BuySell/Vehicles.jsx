@@ -9,7 +9,7 @@ const Vehicles = () => {
             .then(res => res.json())
             .then(data => {
                 const buyProducts = data.filter(item => item.
-                    category === 'Vehicle');
+                    category === 'vehicle');
                 setProducts(buyProducts)
             })
     }, [])
@@ -18,7 +18,7 @@ const Vehicles = () => {
             .then(res => res.json())
             .then(data =>{
                 const buyProducts = data.filter(item => item.
-                    category === 'furniture');
+                    category === 'vehicle');
                     setAdvertisingRentServices(buyProducts)
             })
     }, [])

@@ -1,5 +1,5 @@
 const RentHouseCart = ({rentService}) => {
-    const {title, image, details, location, price,mobile, gender} = rentService;
+    const {title, image, details, location, price,mobile, gender, date} = rentService;
 
     return (
         
@@ -15,6 +15,7 @@ const RentHouseCart = ({rentService}) => {
             <p>ভাড়াঃ {price} </p>
             <p>যোগাযোগঃ {mobile} </p>
             <div className="card-actions justify-end">
+                <p>Date: {date}</p>
                 <button className="btn btn-primary">See Details...</button>
             </div>
         </div>

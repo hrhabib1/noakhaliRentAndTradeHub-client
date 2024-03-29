@@ -1,5 +1,5 @@
 const VehiclesCart = ({ item }) => {
-    const { title, image, details, location, price, mobile } = item;
+    const { title, image, details, location, price, mobile, date } = item;
 
     return (
 
@@ -12,6 +12,7 @@ const VehiclesCart = ({ item }) => {
                 <p>Price: {price} </p>
                 <p>যোগাযোগঃ {mobile} </p>
                 <div className="card-actions justify-end">
+                <p>Date: {date}</p>
                     <button className="btn btn-primary">See Details...</button>
                 </div>
             </div>

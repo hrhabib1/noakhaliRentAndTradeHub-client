@@ -1,47 +1,99 @@
 import { createContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup,  signOut, onAuthStateChanged } from "firebase/auth";
 import app from "../firebase/firebase.config";
-export const AuthContext = createContext();
+
 const auth = getAuth(app);
+export const AuthContext = createContext(null);
 
 const AuthProviders = ({ children }) => {
-    const [user, setUser] = useState(null);
+    const [userData, setUserData] = useState({
+        isAuthenticated: false,
+        user: null,
+    });
     const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
+            if (currentUser) {
+                setUserData({
+                    isAuthenticated: true,
+                    user: currentUser,
+                });
+            } else {
+                setUserData({
+                    isAuthenticated: false,
+                    user: null,
+                });
+            }
+            setLoading(false);
+        });
+
+        return () => unsubscribe();
+    }, []);
+
     const providerLogIn = (provider) => {
-        setLoading(true)
+        setLoading(true);
         return signInWithPopup(auth, provider);
-    }
+    };
+
     const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
-    }
-    const signIn = (email, password) =>{
+            .then(userCredential => {
+                const user = userCredential.user;
+                setUserData({
+                    isAuthenticated: true,
+                    user: user,
+                });
+                return userCredential;
+            })
+            .catch(error => {
+                setLoading(false);
+                throw error;
+            });
+    };
+
+    const signIn = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password)
-    }
-    useEffect(()=>{
-        const unsubscribe = onAuthStateChanged(auth, currentUser => {
-            setUser(currentUser);
-            console.log('current user', currentUser);
-            setLoading(false);
-        });
-        return unsubscribe();
-    },[])
-    const logOut = () =>{
+            .then(userCredential => {
+                const user = userCredential.user;
+                setUserData({
+                    isAuthenticated: true,
+                    user: user,
+                });
+                return userCredential;
+            })
+            .catch(error => {
+                setLoading(false);
+                throw error;
+            });
+    };
+
+    const logOut = () => {
         setLoading(true);
         return signOut(auth)
-    }
-    
-      
-    const authInfu = {
-        user,
-        loading,
-        createUser,
-        signIn,
-        logOut,
-        providerLogIn, 
+            .then(() => {
+                setUserData({
+                    isAuthenticated: false,
+                    user: null,
+                });
+            })
+            .catch(error => {
+                setLoading(false);
+                throw error;
+            });
+    };
 
-    }
+    const authInfu = {
+        user: userData.user,
+        loading: loading,
+        createUser: createUser,
+        signIn: signIn,
+        logOut: logOut,
+        providerLogIn: providerLogIn,
+    };
+
     return (
         <AuthContext.Provider value={authInfu}>
             {children}

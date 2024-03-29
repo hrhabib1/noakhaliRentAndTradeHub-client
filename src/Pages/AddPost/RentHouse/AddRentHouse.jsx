@@ -32,8 +32,7 @@ const AddRentHouse = () => {
             details,
             location,
             mobile,
-            category
-
+            category,
         }
         console.log(rentHouse);
         fetch('http://localhost:5000/rentHouses', {
