@@ -1,6 +1,7 @@
 import '../../Style/Style.css';
 import { useEffect, useState } from 'react';
 import FurnituresCart from './FurnituresCart';
+import AdvertisingBuySellCart from './AdvertisingBuySellCart';
 const Furnitures = () => {
     const [products, setProducts] = useState([]);
     const [advertisingRentServices, setAdvertisingRentServices] = useState([]);
@@ -32,10 +33,10 @@ const Furnitures = () => {
             <div className="grid grid-cols-2 gap-10 mb-10 post text-black">
                 
             {
-                    advertisingRentServices.map(item => <FurnituresCart
+                    advertisingRentServices.map(item => <AdvertisingBuySellCart
                         key={item._id}
                         item={item}
-                    ></FurnituresCart>)
+                    ></AdvertisingBuySellCart>)
                 }
                  
              </div>
