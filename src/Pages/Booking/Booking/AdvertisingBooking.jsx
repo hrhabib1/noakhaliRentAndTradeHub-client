@@ -79,7 +79,7 @@ const AdvertisingBooking = () => {
                         </div>
                         <div>
                             <p className="text-black mt-5">Enter the Seat number you want:</p>
-                            <input className="bg-white text-black px-10 py-4 w-full" type="text" name="quantity" id="" placeholder="Write surely " required />
+                            <input className="bg-white text-black px-10 py-4 w-full" type="number" name="quantity" id="" placeholder="Write surely " required />
                         </div>
                         <div>
                             <p className="text-black mt-5">Enter your Booking date:</p>

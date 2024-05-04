@@ -16,6 +16,8 @@ import AdvertisingBuySell from "../Pages/CreateAdvertising/AdvertisingBuySell";
 import Advertising from "../Pages/Advertising/Advertising";
 import Booking from "../Pages/Booking/Booking/Booking";
 import AdvertisingBooking from "../Pages/Booking/Booking/AdvertisingBooking";
+import Order from "../Pages/Booking/Order/Order";
+import AdvertisingOrder from "../Pages/Booking/Order/AdvertisingOrder";
 
 export const router = createBrowserRouter([
     {
@@ -83,6 +85,16 @@ export const router = createBrowserRouter([
             {
               path: '/advertisingBooking/:id',
               element: <AdvertisingBooking></AdvertisingBooking>,
+              loader: ({params}) => fetch(`http://localhost:5000/createAdvertisings/${params.id}`),
+          },
+            {
+              path: '/order/:id',
+              element: <Order></Order>,
+              loader: ({params}) => fetch(`http://localhost:5000/buySell/${params.id}`),
+          },
+            {
+              path: '/advertisingOrder/:id',
+              element: <AdvertisingOrder></AdvertisingOrder>,
               loader: ({params}) => fetch(`http://localhost:5000/createAdvertisings/${params.id}`),
           },
           

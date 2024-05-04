@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 const FurnituresCart = ({ item }) => {
-    const { title, image, details, location, price, mobile, date } = item;
+    const { title, image, details, location, price, mobile, date, _id } = item;
 
     return (
 
@@ -12,8 +14,10 @@ const FurnituresCart = ({ item }) => {
                 <p>Price: {price} </p>
                 <p>যোগাযোগঃ {mobile} </p>
                 <div className="card-actions justify-end">
-                <p>Date: {date}</p>
-                    <button className="btn btn-primary">See Details...</button>
+                    <p>Date: {date}</p>
+                    <Link to={`/order/${_id}`}>
+                        <button className="btn btn-primary">Order Now</button>
+                    </Link>
                 </div>
             </div>
         </div>
