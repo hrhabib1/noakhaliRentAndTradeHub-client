@@ -14,6 +14,8 @@ import Vehicles from "../Pages/BuySell/Vehicles";
 import AdvertisingRentHouse from "../Pages/CreateAdvertising/AdvertisingRentHouse";
 import AdvertisingBuySell from "../Pages/CreateAdvertising/AdvertisingBuySell";
 import Advertising from "../Pages/Advertising/Advertising";
+import Booking from "../Pages/Booking/Booking/Booking";
+import AdvertisingBooking from "../Pages/Booking/Booking/AdvertisingBooking";
 
 export const router = createBrowserRouter([
     {
@@ -72,6 +74,18 @@ export const router = createBrowserRouter([
             path: '/Addvertising',
             element: <Advertising></Advertising>
           },
+            
+            {
+              path: '/booking/:id',
+              element: <Booking></Booking>,
+              loader: ({params}) => fetch(`http://localhost:5000/rentHouses/${params.id}`),
+          },
+            {
+              path: '/advertisingBooking/:id',
+              element: <AdvertisingBooking></AdvertisingBooking>,
+              loader: ({params}) => fetch(`http://localhost:5000/createAdvertisings/${params.id}`),
+          },
+          
         ]
       },
   ]);
