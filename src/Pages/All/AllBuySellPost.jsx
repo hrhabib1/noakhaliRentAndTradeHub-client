@@ -1,9 +1,90 @@
+import {  useEffect, useState } from "react";
+import AllPostRow from "./AllPostRow";
 const AllBuySellPost = () => {
-    return (
-        <div>
-            
-        </div>
-    );
-};
+    
+        const [posts, setPosts] = useState([]);
+        useEffect(() => {
+            fetch('http://localhost:5000/buySell')
+                .then(res => res.json())
+                .then(data => setPosts(data))
+        }, []);
+        const handlePostConfirm = id =>{
+            const proceed = confirm('Are you sure you want to confirm it?');
+            if(proceed){
+              fetch(`http://localhost:5000/buySell/${id}`, {
+                  method: 'PATCH',
+                  headers:{
+                    'content-type': 'application/json'
+                  },
+                  body: JSON.stringify({status: 'confirmed'})
+              })
+              .then(res => res.json())
+              .then(data => {
+                  console.log(data);
+                  if(data.modifiedCount > 0){
+                      const remaining = posts.filter(post=> post._id !== id);
+                      const update = posts.find(post=> post._id === id);
+                      update.status = 'confirmed'
+                      const newPosts = [update, ...remaining]
+                      setPosts(newPosts);
+                  }
+              })
+            }
+      }
+      const handleDelete= id =>{
+        const proceed = confirm('Are you sure you want to delete it?');
+        if(proceed){
+          fetch(`http://localhost:5000/buySell/${id}`, {
+              method: 'DELETE'
+          })
+          .then(res => res.json())
+          .then(data => {
+              console.log(data);
+              if(data.deleteCount > 0){
+                  const remaining = posts.filter(post=> post._id !== id);
+                  setPosts(remaining);
+                  alert('deleted successful');
+              }
+          })
+        }
+    }
+        return (
+            <div>
+                <div className="pt-28">
+                    <div className="overflow-x-auto border-red-400 bg-white text-black text-xl">
+                        <table className="table">
+                            {/* head */}
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <label>
+                                            <input type="checkbox" className="checkbox" />
+                                        </label>
+                                    </th>
+                                    <th>Service Name</th>
+                                    <th>Buyer Name & Email</th>
+                                    <th>Price</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                              {
+                                posts.map(post => <AllPostRow
+                                  key={post._id}
+                                  post={post}
+                                  handlePostConfirm={handlePostConfirm}
+                                  handleDelete={handleDelete}
+                                ></AllPostRow>)
+                              }
+                               
+                            </tbody>
+    
+                        </table>
+                    </div>
+                </div>
+            </div>
+        );
+    };
 
 export default AllBuySellPost;

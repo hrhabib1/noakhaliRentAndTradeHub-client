@@ -10,7 +10,7 @@ const Furnitures = () => {
             .then(res => res.json())
             .then(data => {
                 const buyProducts = data.filter(item => item.
-                    category === 'furniture');
+                    category === 'furniture' && item.status === 'confirmed');
                 setProducts(buyProducts)
             })
     }, [])
