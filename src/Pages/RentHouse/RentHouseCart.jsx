@@ -1,8 +1,10 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProviders";
 
 const RentHouseCart = ({ rentService }) => {
     const { title, image, details, location, price, mobile, gender, date, _id } = rentService;
-
+    const { user } = useContext(AuthContext)
     return (
 
         <div className="card card-compact  bg-base-500 shadow-xl">
@@ -18,9 +20,16 @@ const RentHouseCart = ({ rentService }) => {
                 <p>যোগাযোগঃ {mobile} </p>
                 <div className="card-actions justify-end">
                     <p>Date: {date}</p>
-                    <Link to={`/booking/${_id}`}>
-                        <button className="btn btn-primary">Booking Now</button>
-                    </Link>
+                    {
+                        user?.email !== 'sayefhabib123@gmail.com' ?
+                            <>
+                                <Link to={`/booking/${_id}`}>
+                                    <button className="btn btn-primary">Booking Now</button>
+                                </Link>
+                            </>
+                            :
+                            <></>
+                    }
                 </div>
             </div>
         </div>

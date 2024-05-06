@@ -1,8 +1,10 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProviders";
 
 const ElectronicDeviceCart = ({ item }) => {
     const { title, image, details, location, price, mobile, date, _id } = item;
-
+    const { user } = useContext(AuthContext);
     return (
 
         <div className="card card-compact  bg-base-500 shadow-xl">
@@ -15,10 +17,16 @@ const ElectronicDeviceCart = ({ item }) => {
                 <p>যোগাযোগঃ {mobile} </p>
                 <div className="card-actions justify-end">
                     <p>Date: {date}</p>
-                    <Link to={`/order/${_id}`}>
-                        <button className="btn btn-primary">Order Now</button>
-                    </Link>
-
+                    {
+                        user?.email !== 'sayefhabib123@gmail.com' ?
+                            <>
+                                <Link to={`/order/${_id}`}>
+                                    <button className="btn btn-primary">Order Now</button>
+                                </Link>
+                            </>
+                            :
+                            <></>
+                    }
                 </div>
             </div>
         </div >

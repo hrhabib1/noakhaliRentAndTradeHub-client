@@ -28,6 +28,7 @@ import MyOrder from "../Pages/My/MyOrder";
 import MyBooking from "../Pages/My/MyBooking";
 import MyBookingRequeest from "../Pages/My/MyBookingRequeest";
 import MyOrderRequest from "../Pages/My/MyOrderRequest";
+import PrivateRoute from "./PrivateRoutes";
 
 export const router = createBrowserRouter([
     {
@@ -68,35 +69,35 @@ export const router = createBrowserRouter([
           },
           {
             path: '/AddRentHouse',
-            element: <AddRentHouse></AddRentHouse>
+            element: <PrivateRoute><AddRentHouse></AddRentHouse></PrivateRoute>
           },
           {
             path: '/AddBuySell',
-            element: <AddBuySell></AddBuySell>
+            element: <PrivateRoute><AddBuySell></AddBuySell></PrivateRoute>
           },
           {
             path: '/AddvertisingRentHouse',
-            element: <AdvertisingRentHouse></AdvertisingRentHouse>
+            element: <PrivateRoute><AdvertisingRentHouse></AdvertisingRentHouse></PrivateRoute>
           },
           {
             path: '/AddvertisingBuySell',
-            element: <AdvertisingBuySell></AdvertisingBuySell>
+            element: <PrivateRoute><AdvertisingBuySell></AdvertisingBuySell></PrivateRoute>
           },
           {
             path: '/Addvertising',
-            element: <Advertising></Advertising>
+            element: <PrivateRoute><Advertising></Advertising></PrivateRoute>
           },
           {
             path: '/rentHouseReq',
-            element: <AllRentHousePost></AllRentHousePost>
+            element: <PrivateRoute><AllRentHousePost></AllRentHousePost></PrivateRoute>
           },
           {
             path: '/buySellReq',
-            element: <AllBuySellPost></AllBuySellPost>
+            element: <PrivateRoute><AllBuySellPost></AllBuySellPost></PrivateRoute>
           },
           {
             path: '/advertisingReq',
-            element: <AllAdvertisingPost></AllAdvertisingPost>
+            element: <PrivateRoute><AllAdvertisingPost></AllAdvertisingPost></PrivateRoute>
           },
           {
             path: '/myRentHouse',
@@ -129,22 +130,22 @@ export const router = createBrowserRouter([
             
             {
               path: '/booking/:id',
-              element: <Booking></Booking>,
+              element: <PrivateRoute><Booking></Booking></PrivateRoute>,
               loader: ({params}) => fetch(`http://localhost:5000/rentHouses/${params.id}`),
           },
             {
               path: '/advertisingBooking/:id',
-              element: <AdvertisingBooking></AdvertisingBooking>,
+              element: <PrivateRoute><AdvertisingBooking></AdvertisingBooking></PrivateRoute>,
               loader: ({params}) => fetch(`http://localhost:5000/createAdvertisings/${params.id}`),
           },
             {
               path: '/order/:id',
-              element: <Order></Order>,
+              element: <PrivateRoute><Order></Order></PrivateRoute>,
               loader: ({params}) => fetch(`http://localhost:5000/buySell/${params.id}`),
           },
             {
               path: '/advertisingOrder/:id',
-              element: <AdvertisingOrder></AdvertisingOrder>,
+              element: <PrivateRoute><AdvertisingOrder></AdvertisingOrder></PrivateRoute>,
               loader: ({params}) => fetch(`http://localhost:5000/createAdvertisings/${params.id}`),
           },
           
