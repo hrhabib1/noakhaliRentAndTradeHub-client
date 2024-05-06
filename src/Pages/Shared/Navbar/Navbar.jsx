@@ -64,6 +64,27 @@ const Navbar = () => {
                 </ul>
               </details>
             </li>
+            <li>
+              <details>
+                <summary>All Post Request</summary>
+                <ul className="p-2 bg-white w-96">
+                  <li><a href="/rentHouseReq"> For Rent House</a></li>
+                  <li><a href="/buySellReq"> For Buy Sell Exesories</a></li>
+                  <li><a href="/advertisingReq"> For Advertising</a></li>
+                </ul>
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary>My Post</summary>
+                <ul className="p-2 bg-white w-96">
+                  <li><a href="/myRentHouse"> My Rent House Post</a></li>
+                  <li><a href="/myBuySell"> My Buy Sell Exesories Post</a></li>
+                  <li><a href="/MyAdvertising"> My Advertising Post</a></li>
+                </ul>
+              </details>
+            </li>
+
           </ul>
         </div>
         <div className="navbar-end">

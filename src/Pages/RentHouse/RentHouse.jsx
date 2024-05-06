@@ -10,15 +10,19 @@ const RentHouse = () => {
     useEffect(() => {
         fetch('http://localhost:5000/rentHouses')
             .then(res => res.json())
-            .then(data => setRentServices(data))
+            .then(data => {
+                const rent = data.filter(item => item.
+                    status === 'confirmed');
+                setRentServices(rent)
+            })
     }, [])
     useEffect(() => {
         fetch('http://localhost:5000/createAdvertisings')
             .then(res => res.json())
-            .then(data =>{
+            .then(data => {
                 const buyProducts = data.filter(item => item.
                     category === 'rentHouse');
-                    setAdvertisingRentServices(buyProducts)
+                setAdvertisingRentServices(buyProducts)
             })
     }, [])
     return (
@@ -26,25 +30,25 @@ const RentHouse = () => {
             <h2 className="text-black text-center my-5 font-extrabold">বাসা ভাড়া নিতে এবং দিতে পারেন খুব সহজেই। </h2>
             <h1 className="text-black text-start my-5 font-extrabold">Advertising Post:</h1>
             <div className="grid grid-cols-2 gap-10 mb-10 post text-black">
-                
+
                 {
-                 advertisingRentServices.map(advertisingRentService => <AdvertisingRentHouseCart
-                 key={advertisingRentService._id}
-                 advertisingRentService={advertisingRentService}
-                 ></AdvertisingRentHouseCart>)
-                } 
-                 
-             </div>
-             <h1 className="text-black text-start my-5 font-extrabold">All Post</h1>
+                    advertisingRentServices.map(advertisingRentService => <AdvertisingRentHouseCart
+                        key={advertisingRentService._id}
+                        advertisingRentService={advertisingRentService}
+                    ></AdvertisingRentHouseCart>)
+                }
+
+            </div>
+            <h1 className="text-black text-start my-5 font-extrabold">All Post</h1>
             <div className="grid grid-cols-2 gap-10 mb-10 post text-black">
-                
-               {
-                rentServices.map(rentService => <RentHouseCart
-                key={rentService._id}
-                rentService={rentService}
-                ></RentHouseCart>)
-               } 
-                
+
+                {
+                    rentServices.map(rentService => <RentHouseCart
+                        key={rentService._id}
+                        rentService={rentService}
+                    ></RentHouseCart>)
+                }
+
             </div>
         </div>
     );

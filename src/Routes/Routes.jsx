@@ -18,6 +18,7 @@ import Booking from "../Pages/Booking/Booking/Booking";
 import AdvertisingBooking from "../Pages/Booking/Booking/AdvertisingBooking";
 import Order from "../Pages/Booking/Order/Order";
 import AdvertisingOrder from "../Pages/Booking/Order/AdvertisingOrder";
+import AllRentHousePost from "../Pages/All/AllRentHousePost";
 
 export const router = createBrowserRouter([
     {
@@ -75,6 +76,10 @@ export const router = createBrowserRouter([
           {
             path: '/Addvertising',
             element: <Advertising></Advertising>
+          },
+          {
+            path: '/rentHouseReq',
+            element: <AllRentHousePost></AllRentHousePost>
           },
             
             {
