@@ -1,6 +1,6 @@
-const MyOrderRow = ({ order, handleDelete }) => {
+const MyOrderRow = ({ order, handleDelete, handlePostConfirm }) => {
     const { _id, customerName, title, 
-        cutomerEmail, price, date, image } = order;
+        cutomerEmail, price, date, image, status } = order;
 
     return (
         <tr>
@@ -29,8 +29,11 @@ const MyOrderRow = ({ order, handleDelete }) => {
             <td>{price} </td>
             <td>{date}</td>
             <th>
-                pending
-            </th>
+                   { 
+                   status === 'confirmed'? <span className="font-bold text-primary">Order Confirmed</span>
+                   :
+                   <button onClick={()=>handlePostConfirm(_id)} className="btn btn-ghost btn-xs">pending</button>}
+                </th>
         </tr>
     );
 };

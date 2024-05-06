@@ -16,9 +16,9 @@ const Order = () => {
         const date = form.date.value;
         const addOrderPost = {
             title,
+            email,
             customerName,
             cutomerEmail,
-            email,
             date,
             phone,
             image,

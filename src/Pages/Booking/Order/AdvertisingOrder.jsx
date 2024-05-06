@@ -53,6 +53,7 @@ const AdvertisingOrder = () => {
                             <h1 className="text-3xl font-bold">{title}</h1>
                             <p>Location: {location}</p>
                             <p>Price: {price}</p>
+                            <p>A{email}</p>
                         </div>
                     </div>
                 </div>

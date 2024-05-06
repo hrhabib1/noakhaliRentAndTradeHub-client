@@ -26,6 +26,8 @@ import MyBuySellPost from "../Pages/My/MyBuySellPost";
 import MyAdvertisingPost from "../Pages/My/MyAdvertisingPost";
 import MyOrder from "../Pages/My/MyOrder";
 import MyBooking from "../Pages/My/MyBooking";
+import MyBookingRequeest from "../Pages/My/MyBookingRequeest";
+import MyOrderRequest from "../Pages/My/MyOrderRequest";
 
 export const router = createBrowserRouter([
     {
@@ -115,6 +117,14 @@ export const router = createBrowserRouter([
           {
             path: '/myOrder',
             element: <MyOrder></MyOrder>
+          },
+          {
+            path: '/myBookingReq',
+            element: <MyBookingRequeest></MyBookingRequeest>
+          },
+          {
+            path: '/myOrderReq',
+            element: <MyOrderRequest></MyOrderRequest>
           },
             
             {
