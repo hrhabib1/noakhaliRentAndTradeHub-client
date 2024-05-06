@@ -10,7 +10,7 @@ const AddBuySell = () => {
         const form = event.target;
         const name = form.name.value;
         const photoURL = form.photoURL.value;
-        const email = user?.email;
+        const email = form.email.value;
         const title = form.title.value;
         const image = form.imgURL.value;
         const price = form.price.value;

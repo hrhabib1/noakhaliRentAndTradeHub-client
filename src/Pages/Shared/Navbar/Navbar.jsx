@@ -80,7 +80,7 @@ const Navbar = () => {
                 <ul className="p-2 bg-white w-96">
                   <li><a href="/myRentHouse"> My Rent House Post</a></li>
                   <li><a href="/myBuySell"> My Buy Sell Exesories Post</a></li>
-                  <li><a href="/MyAdvertising"> My Advertising Post</a></li>
+                  <li><a href="/myAdvertising"> My Advertising Post</a></li>
                 </ul>
               </details>
             </li>

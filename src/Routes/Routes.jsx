@@ -21,6 +21,9 @@ import AdvertisingOrder from "../Pages/Booking/Order/AdvertisingOrder";
 import AllRentHousePost from "../Pages/All/AllRentHousePost";
 import AllBuySellPost from "../Pages/All/AllBuySellPost";
 import AllAdvertisingPost from "../Pages/All/AllAdvertisingPost";
+import MyRentHousePost from "../Pages/My/MyRentHousePost";
+import MyBuySellPost from "../Pages/My/MyBuySellPost";
+import MyAdvertisingPost from "../Pages/My/MyAdvertisingPost";
 
 export const router = createBrowserRouter([
     {
@@ -90,6 +93,18 @@ export const router = createBrowserRouter([
           {
             path: '/advertisingReq',
             element: <AllAdvertisingPost></AllAdvertisingPost>
+          },
+          {
+            path: '/myRentHouse',
+            element: <MyRentHousePost></MyRentHousePost>
+          },
+          {
+            path: '/myBuySell',
+            element: <MyBuySellPost></MyBuySellPost>
+          },
+          {
+            path: '/myAdvertising',
+            element: <MyAdvertisingPost></MyAdvertisingPost>
           },
             
             {

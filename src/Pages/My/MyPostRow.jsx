@@ -1,5 +1,5 @@
-const AllPostRow =  ({ post, handleDelete, handlePostConfirm }) => {
-        const { _id, name, title, details, email, price, date, image, status } = post;
+const MyPostRow = ({ post, handleDelete }) => {
+        const { _id, name, title,details, email, price, date, image } = post;
        
         return (
             <tr>
@@ -28,13 +28,10 @@ const AllPostRow =  ({ post, handleDelete, handlePostConfirm }) => {
                 <td>{price}</td>
                 <td>{date}</td>
                 <th>
-                   { 
-                   status === 'confirmed'? <span className="font-bold text-primary">Order Confirmed</span>
-                   :
-                   <button onClick={()=>handlePostConfirm(_id)} className="btn btn-ghost btn-xs">pending</button>}
+                   Pending
                 </th>
             </tr>
         );
     };
 
-export default AllPostRow;
+export default MyPostRow;
