@@ -6,7 +6,7 @@ const MyBuySellPost = () => {
     
             const { user } = useContext(AuthContext);
             const [posts, setPosts] = useState([]);
-            const url = `http://localhost:5000/buySell?email=${user?.email}`;
+            const url = `https://noakhali-rent-and-trade-hub-server.vercel.app/buySell?email=${user?.email}`;
             useEffect(() => {
                 fetch(url)
                     .then(res => res.json())
@@ -15,7 +15,7 @@ const MyBuySellPost = () => {
             const handleDelete= id =>{
                 const proceed = confirm('Are you sure you want to delete it?');
                 if(proceed){
-                  fetch(`http://localhost:5000/rentHouses/${id}`, {
+                  fetch(`https://noakhali-rent-and-trade-hub-server.vercel.app/rentHouses/${id}`, {
                       method: 'DELETE'
                   })
                   .then(res => res.json())

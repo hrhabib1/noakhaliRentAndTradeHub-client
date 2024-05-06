@@ -35,7 +35,7 @@ const AddRentHouse = () => {
             category,
         }
         console.log(rentHouse);
-        fetch('http://localhost:5000/rentHouses', {
+        fetch('https://noakhali-rent-and-trade-hub-server.vercel.app/rentHouses', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

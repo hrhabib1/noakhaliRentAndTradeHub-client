@@ -5,14 +5,14 @@ const AllRentHousePost = () => {
 
     const [posts, setPosts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/rentHouses')
+        fetch('https://noakhali-rent-and-trade-hub-server.vercel.app/rentHouses')
             .then(res => res.json())
             .then(data => setPosts(data))
     }, []);
     const handlePostConfirm = id =>{
         const proceed = confirm('Are you sure you want to confirm it?');
         if(proceed){
-          fetch(`http://localhost:5000/rentHouses/${id}`, {
+          fetch(`https://noakhali-rent-and-trade-hub-server.vercel.app/rentHouses/${id}`, {
               method: 'PATCH',
               headers:{
                 'content-type': 'application/json'
@@ -35,7 +35,7 @@ const AllRentHousePost = () => {
   const handleDelete= id =>{
     const proceed = confirm('Are you sure you want to delete it?');
     if(proceed){
-      fetch(`http://localhost:5000/rentHouses/${id}`, {
+      fetch(`https://noakhali-rent-and-trade-hub-server.vercel.app/rentHouses/${id}`, {
           method: 'DELETE'
       })
       .then(res => res.json())

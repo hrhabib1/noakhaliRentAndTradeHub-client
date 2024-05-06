@@ -34,7 +34,7 @@ const AddBuySell = () => {
 
         }
         console.log(buySell);
-        fetch('http://localhost:5000/buySell', {
+        fetch('https://noakhali-rent-and-trade-hub-server.vercel.app/buySell', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

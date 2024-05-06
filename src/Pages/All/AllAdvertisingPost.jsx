@@ -4,14 +4,14 @@ import AllAdvertisingPostRow from "./AllAdvertisingPostRow";
 const AllAdvertisingPost = () => {
         const [posts, setPosts] = useState([]);
         useEffect(() => {
-            fetch('http://localhost:5000/createAdvertisings')
+            fetch('https://noakhali-rent-and-trade-hub-server.vercel.app/createAdvertisings')
                 .then(res => res.json())
                 .then(data => setPosts(data))
         }, []);
         const handlePostConfirm = id =>{
             const proceed = confirm('Are you sure you want to confirm it?');
             if(proceed){
-              fetch(`http://localhost:5000/createAdvertisings/${id}`, {
+              fetch(`https://noakhali-rent-and-trade-hub-server.vercel.app/createAdvertisings/${id}`, {
                   method: 'PATCH',
                   headers:{
                     'content-type': 'application/json'
@@ -34,7 +34,7 @@ const AllAdvertisingPost = () => {
       const handleDelete= id =>{
         const proceed = confirm('Are you sure you want to delete it?');
         if(proceed){
-          fetch(`http://localhost:5000/createAdvertisings/${id}`, {
+          fetch(`https://noakhali-rent-and-trade-hub-server.vercel.app/createAdvertisings/${id}`, {
               method: 'DELETE'
           })
           .then(res => res.json())

@@ -8,7 +8,7 @@ const RentHouse = () => {
     const [advertisingRentServices, setAdvertisingRentServices] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/rentHouses')
+        fetch('https://noakhali-rent-and-trade-hub-server.vercel.app/rentHouses')
             .then(res => res.json())
             .then(data => {
                 const rent = data.filter(item => item.
@@ -17,7 +17,7 @@ const RentHouse = () => {
             })
     }, [])
     useEffect(() => {
-        fetch('http://localhost:5000/createAdvertisings')
+        fetch('https://noakhali-rent-and-trade-hub-server.vercel.app/createAdvertisings')
             .then(res => res.json())
             .then(data => {
                 const buyProducts = data.filter(item => item.

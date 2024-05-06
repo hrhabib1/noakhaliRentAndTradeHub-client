@@ -131,22 +131,22 @@ export const router = createBrowserRouter([
             {
               path: '/booking/:id',
               element: <PrivateRoute><Booking></Booking></PrivateRoute>,
-              loader: ({params}) => fetch(`http://localhost:5000/rentHouses/${params.id}`),
+              loader: ({params}) => fetch(`https://noakhali-rent-and-trade-hub-server.vercel.app/rentHouses/${params.id}`),
           },
             {
               path: '/advertisingBooking/:id',
               element: <PrivateRoute><AdvertisingBooking></AdvertisingBooking></PrivateRoute>,
-              loader: ({params}) => fetch(`http://localhost:5000/createAdvertisings/${params.id}`),
+              loader: ({params}) => fetch(`https://noakhali-rent-and-trade-hub-server.vercel.app/createAdvertisings/${params.id}`),
           },
             {
               path: '/order/:id',
               element: <PrivateRoute><Order></Order></PrivateRoute>,
-              loader: ({params}) => fetch(`http://localhost:5000/buySell/${params.id}`),
+              loader: ({params}) => fetch(`https://noakhali-rent-and-trade-hub-server.vercel.app/buySell/${params.id}`),
           },
             {
               path: '/advertisingOrder/:id',
               element: <PrivateRoute><AdvertisingOrder></AdvertisingOrder></PrivateRoute>,
-              loader: ({params}) => fetch(`http://localhost:5000/createAdvertisings/${params.id}`),
+              loader: ({params}) => fetch(`https://noakhali-rent-and-trade-hub-server.vercel.app/createAdvertisings/${params.id}`),
           },
           
         ]

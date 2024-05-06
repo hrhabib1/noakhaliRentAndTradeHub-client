@@ -4,7 +4,7 @@ import AdvertisingCart from './AdvertisingCart';
 const Advertising = () => {
     const [advertisingRentServices, setAdvertisingRentServices] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/createAdvertisings')
+        fetch('https://noakhali-rent-and-trade-hub-server.vercel.app/createAdvertisings')
             .then(res => res.json())
             .then(data => setAdvertisingRentServices(data))
     }, [])

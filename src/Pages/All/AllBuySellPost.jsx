@@ -4,14 +4,14 @@ const AllBuySellPost = () => {
     
         const [posts, setPosts] = useState([]);
         useEffect(() => {
-            fetch('http://localhost:5000/buySell')
+            fetch('https://noakhali-rent-and-trade-hub-server.vercel.app/buySell')
                 .then(res => res.json())
                 .then(data => setPosts(data))
         }, []);
         const handlePostConfirm = id =>{
             const proceed = confirm('Are you sure you want to confirm it?');
             if(proceed){
-              fetch(`http://localhost:5000/buySell/${id}`, {
+              fetch(`https://noakhali-rent-and-trade-hub-server.vercel.app/buySell/${id}`, {
                   method: 'PATCH',
                   headers:{
                     'content-type': 'application/json'
@@ -34,7 +34,7 @@ const AllBuySellPost = () => {
       const handleDelete= id =>{
         const proceed = confirm('Are you sure you want to delete it?');
         if(proceed){
-          fetch(`http://localhost:5000/buySell/${id}`, {
+          fetch(`https://noakhali-rent-and-trade-hub-server.vercel.app/buySell/${id}`, {
               method: 'DELETE'
           })
           .then(res => res.json())

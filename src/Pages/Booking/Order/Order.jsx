@@ -27,7 +27,7 @@ const Order = () => {
 
         }
         console.log(addOrderPost);
-        fetch('http://localhost:5000/orders', {
+        fetch('https://noakhali-rent-and-trade-hub-server.vercel.app/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

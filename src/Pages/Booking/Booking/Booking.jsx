@@ -29,7 +29,7 @@ const Booking = () => {
 
         }
         console.log(addBookingPost);
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://noakhali-rent-and-trade-hub-server.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

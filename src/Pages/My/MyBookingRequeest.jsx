@@ -5,7 +5,7 @@ import MyBookingRowReq from "./MyBookingRowReq";
 const MyBookingRequeest = () => {
         const { user } = useContext(AuthContext);
         const [orders, setOrders] = useState([]);
-        const url = `http://localhost:5000/myBookings?email=${user?.
+        const url = `https://noakhali-rent-and-trade-hub-server.vercel.app/myBookings?email=${user?.
         email}`;
         useEffect(() => {
             fetch(url)
@@ -15,7 +15,7 @@ const MyBookingRequeest = () => {
         const handlePostConfirm = id =>{
             const proceed = confirm('Are you sure you want to confirm it?');
             if(proceed){
-              fetch(`http://localhost:5000/bookings/${id}`, {
+              fetch(`https://noakhali-rent-and-trade-hub-server.vercel.app/bookings/${id}`, {
                   method: 'PATCH',
                   headers:{
                     'content-type': 'application/json'
@@ -38,7 +38,7 @@ const MyBookingRequeest = () => {
         const handleDelete = id => {
             const proceed = confirm('Are you sure you want to delete it?');
             if (proceed) {
-                fetch(`http://localhost:5000/bookings/${id}`, {
+                fetch(`https://noakhali-rent-and-trade-hub-server.vercel.app/bookings/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

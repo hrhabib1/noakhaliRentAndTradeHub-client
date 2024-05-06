@@ -6,7 +6,7 @@ const MyAdvertisingPost = () => {
        
                 const { user } = useContext(AuthContext);
                 const [posts, setPosts] = useState([]);
-                const url = `http://localhost:5000/createAdvertisings=${user?.email}`;
+                const url = `https://noakhali-rent-and-trade-hub-server.vercel.app/createAdvertisings=${user?.email}`;
                 useEffect(() => {
                     fetch(url)
                         .then(res => res.json())
@@ -15,7 +15,7 @@ const MyAdvertisingPost = () => {
                 const handleDelete= id =>{
                     const proceed = confirm('Are you sure you want to delete it?');
                     if(proceed){
-                      fetch(`http://localhost:5000/createAdvertisings/${id}`, {
+                      fetch(`https://noakhali-rent-and-trade-hub-server.vercel.app/createAdvertisings/${id}`, {
                           method: 'DELETE'
                       })
                       .then(res => res.json())

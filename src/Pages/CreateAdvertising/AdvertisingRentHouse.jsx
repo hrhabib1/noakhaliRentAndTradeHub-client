@@ -44,7 +44,7 @@ const AdvertisingRentHouse = () => {
 
         }
         console.log(advertisingRentHouse);
-        fetch('http://localhost:5000/createAdvertisings', {
+        fetch('https://noakhali-rent-and-trade-hub-server.vercel.app/createAdvertisings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
