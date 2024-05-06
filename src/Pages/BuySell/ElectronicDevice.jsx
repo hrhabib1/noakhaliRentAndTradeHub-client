@@ -19,7 +19,7 @@ const ElectronicDevice = () => {
             .then(res => res.json())
             .then(data =>{
                 const buyProducts = data.filter(item => item.
-                    category === 'electronicDevice');
+                    category === 'electronicDevice' && item.status === 'confirmed');
                     setAdvertisingRentServices(buyProducts)
             })
     }, [])

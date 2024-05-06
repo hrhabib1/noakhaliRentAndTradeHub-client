@@ -19,7 +19,7 @@ const Vehicles = () => {
             .then(res => res.json())
             .then(data =>{
                 const buyProducts = data.filter(item => item.
-                    category === 'vehicle');
+                    category === 'vehicle' && item.status === 'confirmed');
                     setAdvertisingRentServices(buyProducts)
             })
     }, [])

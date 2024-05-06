@@ -18,8 +18,7 @@ const Furnitures = () => {
         fetch('http://localhost:5000/createAdvertisings')
             .then(res => res.json())
             .then(data =>{
-                const buyProducts = data.filter(item => item.
-                    category === 'furniture');
+                const buyProducts = data.filter(item => item.category === 'furniture' && item.status === 'confirmed');
                     setAdvertisingRentServices(buyProducts)
             })
     }, [])

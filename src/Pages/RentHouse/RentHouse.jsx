@@ -21,7 +21,8 @@ const RentHouse = () => {
             .then(res => res.json())
             .then(data => {
                 const buyProducts = data.filter(item => item.
-                    category === 'rentHouse');
+                    category === 'rentHouse' && item.
+                    status === 'confirmed');
                 setAdvertisingRentServices(buyProducts)
             })
     }, [])
