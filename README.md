@@ -16,4 +16,4 @@ Server Repo: https://github.com/hrhabib1/noakhaliRentAndTradeHub-server
 
 Client Repo: https://github.com/hrhabib1/noakhaliRentAndTradeHub-client
 
-Admin Email: habib123@gmail.com  Pass: 123456
+Admin Email: sayefhabib123@gmail.com  Pass: 123456
